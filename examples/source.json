@@ -1,0 +1,24 @@
+{
+  "identities": [
+    {
+      "source_key": "crm:a",
+      "entity": "e1"
+    },
+    {
+      "source_key": "erp:b",
+      "entity": "e1"
+    }
+  ],
+  "contracts": [
+    {
+      "contract": "c1",
+      "source_key": "crm:a",
+      "amount": "8.00"
+    },
+    {
+      "contract": "c2",
+      "source_key": "erp:b",
+      "amount": "2.00"
+    }
+  ]
+}

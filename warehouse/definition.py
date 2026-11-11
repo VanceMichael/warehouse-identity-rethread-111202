@@ -1,0 +1,1 @@
+SCHEMA = {'identities': 'source_key TEXT PRIMARY KEY, entity TEXT NOT NULL', 'contracts': 'contract TEXT PRIMARY KEY, source_key TEXT NOT NULL, amount TEXT NOT NULL'}
