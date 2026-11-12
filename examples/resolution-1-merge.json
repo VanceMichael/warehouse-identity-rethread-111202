@@ -1,0 +1,30 @@
+{
+  "resolution_id": "res-merge-alpha",
+  "version": 1,
+  "valid_from": "2024-01-01",
+  "valid_to": "2024-05-01",
+  "entities": ["ent-alpha", "ent-beta"],
+  "mappings": [
+    {
+      "system": "crm",
+      "source_key": "a",
+      "entity": "ent-alpha",
+      "valid_from": "2024-01-01",
+      "valid_to": "2024-05-01"
+    },
+    {
+      "system": "erp",
+      "source_key": "b",
+      "entity": "ent-alpha",
+      "valid_from": "2024-01-01",
+      "valid_to": "2024-05-01"
+    },
+    {
+      "system": "crm",
+      "source_key": "d",
+      "entity": "ent-beta",
+      "valid_from": "2024-01-01",
+      "valid_to": "2024-04-01"
+    }
+  ]
+}

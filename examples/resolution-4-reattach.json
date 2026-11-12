@@ -1,0 +1,16 @@
+{
+  "resolution_id": "res-reattach-epsilon",
+  "version": 1,
+  "valid_from": "2024-03-01",
+  "valid_to": "2024-12-31",
+  "entities": ["ent-epsilon"],
+  "mappings": [
+    {
+      "system": "erp",
+      "source_key": "h",
+      "entity": "ent-epsilon",
+      "valid_from": "2024-03-01",
+      "valid_to": "2024-12-31"
+    }
+  ]
+}

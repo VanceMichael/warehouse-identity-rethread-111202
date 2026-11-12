@@ -1,0 +1,16 @@
+{
+  "resolution_id": "res-split-gamma",
+  "version": 1,
+  "valid_from": "2024-04-01",
+  "valid_to": "2024-12-31",
+  "entities": ["ent-beta", "ent-gamma"],
+  "mappings": [
+    {
+      "system": "crm",
+      "source_key": "d",
+      "entity": "ent-gamma",
+      "valid_from": "2024-04-01",
+      "valid_to": "2024-12-31"
+    }
+  ]
+}

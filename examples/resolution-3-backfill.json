@@ -1,0 +1,16 @@
+{
+  "resolution_id": "res-backfill-delta",
+  "version": 1,
+  "valid_from": "2024-01-01",
+  "valid_to": "2024-12-31",
+  "entities": ["ent-delta"],
+  "mappings": [
+    {
+      "system": "lms",
+      "source_key": "f",
+      "entity": "ent-delta",
+      "valid_from": "2024-01-01",
+      "valid_to": "2024-12-31"
+    }
+  ]
+}

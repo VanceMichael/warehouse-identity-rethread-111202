@@ -6,6 +6,9 @@ from pathlib import Path
 
 from .definition import SCHEMA
 
+# 只有来源数据允许走通用装载；决议与重织结果有各自的校验入口
+SOURCE_TABLES = ('identities', 'contracts')
+
 
 def encode(value):
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':'), allow_nan=False).encode('utf-8')
@@ -37,7 +40,7 @@ def transaction(connection):
 def load_bundle(connection, bundle, batch):
     if not isinstance(bundle, dict) or not isinstance(batch, str) or not batch:
         raise ValueError('输入需要命名数据集合与批次标识')
-    if set(bundle) - set(SCHEMA):
+    if set(bundle) - set(SOURCE_TABLES):
         raise ValueError('来源包含未登记的数据集合')
     digest = hashlib.sha256(encode(bundle)).hexdigest()
     count = 0

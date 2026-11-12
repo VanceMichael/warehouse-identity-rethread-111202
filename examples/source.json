@@ -13,12 +13,56 @@
     {
       "contract": "c1",
       "source_key": "crm:a",
-      "amount": "8.00"
+      "amount": "8.00",
+      "signed_on": "2024-01-10"
     },
     {
       "contract": "c2",
       "source_key": "erp:b",
-      "amount": "2.00"
+      "amount": "2.00",
+      "signed_on": "2024-02-05"
+    },
+    {
+      "contract": "c3",
+      "source_key": "crm:d",
+      "amount": "5.00",
+      "signed_on": "2024-01-20"
+    },
+    {
+      "contract": "c4",
+      "source_key": "crm:d",
+      "amount": "7.00",
+      "signed_on": "2024-03-15"
+    },
+    {
+      "contract": "c5",
+      "source_key": "crm:d",
+      "amount": "11.00",
+      "signed_on": "2024-04-01"
+    },
+    {
+      "contract": "c6",
+      "source_key": "lms:f",
+      "amount": "4.00",
+      "signed_on": "2024-02-18"
+    },
+    {
+      "contract": "c7",
+      "source_key": "lms:f",
+      "amount": "6.00",
+      "signed_on": "2024-03-22"
+    },
+    {
+      "contract": "c8",
+      "source_key": "erp:h",
+      "amount": "9.00",
+      "signed_on": "2024-03-03"
+    },
+    {
+      "contract": "c9",
+      "source_key": "erp:h",
+      "amount": "6.00",
+      "signed_on": "2024-04-09"
     }
   ]
 }

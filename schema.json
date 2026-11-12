@@ -1,4 +1,14 @@
 {
   "identities": "source_key TEXT PRIMARY KEY, entity TEXT NOT NULL",
-  "contracts": "contract TEXT PRIMARY KEY, source_key TEXT NOT NULL, amount TEXT NOT NULL"
+  "contracts": "contract TEXT PRIMARY KEY, source_key TEXT NOT NULL, amount TEXT NOT NULL, signed_on TEXT NOT NULL",
+  "resolutions": "resolution_id TEXT NOT NULL, version INTEGER NOT NULL, digest TEXT NOT NULL, valid_from TEXT NOT NULL, valid_to TEXT, PRIMARY KEY (resolution_id, version), UNIQUE (digest)",
+  "resolution_entities": "resolution_id TEXT NOT NULL, version INTEGER NOT NULL, entity TEXT NOT NULL, PRIMARY KEY (resolution_id, version, entity)",
+  "resolution_mappings": "resolution_id TEXT NOT NULL, version INTEGER NOT NULL, system TEXT NOT NULL, source_key TEXT NOT NULL, entity TEXT NOT NULL, valid_from TEXT NOT NULL, valid_to TEXT, PRIMARY KEY (resolution_id, version, system, source_key, valid_from)",
+  "dim_entity": "surrogate INTEGER PRIMARY KEY, entity TEXT NOT NULL UNIQUE",
+  "generations": "generation INTEGER PRIMARY KEY, created_at TEXT NOT NULL, decision_fingerprint TEXT NOT NULL, base_fact_fingerprint TEXT NOT NULL",
+  "generation_decisions": "generation INTEGER NOT NULL, resolution_id TEXT NOT NULL, version INTEGER NOT NULL, PRIMARY KEY (generation, resolution_id)",
+  "fact_rw": "generation INTEGER NOT NULL, contract TEXT NOT NULL, source_key TEXT NOT NULL, signed_on TEXT NOT NULL, month TEXT NOT NULL, surrogate INTEGER NOT NULL, amount TEXT NOT NULL, PRIMARY KEY (generation, contract)",
+  "mart_rw": "generation INTEGER NOT NULL, month TEXT NOT NULL, surrogate INTEGER NOT NULL, amount_sum TEXT NOT NULL, active_contracts INTEGER NOT NULL, PRIMARY KEY (generation, month, surrogate)",
+  "partition_builds": "generation INTEGER NOT NULL, month TEXT NOT NULL, input_fingerprint TEXT NOT NULL, mapping_fingerprint TEXT NOT NULL, PRIMARY KEY (generation, month)",
+  "published_pointer": "slot INTEGER PRIMARY KEY CHECK (slot = 1), generation INTEGER NOT NULL"
 }
